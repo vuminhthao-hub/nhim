@@ -1,0 +1,8 @@
+import math
+
+x = float(input("Nhập số đo góc (phút): "))
+do = x / 60
+rad = do * math.pi / 180
+goc_vuong = int(do // 90) + 1
+print("x thuộc góc vuông thứ", goc_vuong)
+print("cos(x) =", math.cos(rad))
