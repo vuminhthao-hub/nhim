@@ -1,0 +1,12 @@
+d,m,y = map(int,input("Nhap ngay, thang, nam: ").split())
+
+s = int(30.42*(m-1)) + d
+
+nhuan = (y%4==0 and y%100!=0) or y%400==0
+
+if m == 2 or (nhuan and m > 2):
+    s += 1
+elif m > 2:
+    s -= 1
+
+print("Ngay thu:", s)
