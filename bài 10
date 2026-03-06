@@ -1,0 +1,15 @@
+while True:
+    s = input("SIN (0 de thoat): ")
+    if s == "0": break
+    if len(s)!=9 or not s.isdigit():
+        print("SIN khong hop le!"); continue
+    
+    t = 0
+    for i in range(9):
+        n = int(s[i])
+        if i%2==1 and i<8:
+            n*=2
+            if n>9: n=n//10+n%10
+        t+=n
+    
+    print("SIN hop le!" if t%10==0 else "SIN khong hop le!")
