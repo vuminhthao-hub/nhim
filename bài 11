@@ -1,0 +1,16 @@
+import random
+h = c = 0
+while True:
+    u = input("Nhap ky tu (b-d-k), ky tu khac de thoat: ")
+    if u not in "bdk": break
+    
+    m = random.choice("bdk")
+    print("Computer:", m)
+    
+    if u != m:
+        if (u=="b" and m=="d") or (u=="d" and m=="k") or (u=="k" and m=="b"):
+            h += 1
+        else:
+            c += 1
+    
+    print("Ty so human - computer:", h, "-", c)
