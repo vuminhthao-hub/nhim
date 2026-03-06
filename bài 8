@@ -1,0 +1,18 @@
+import math
+
+a, b, c = map(float, input("Nhập a, b, c: ").split())
+
+if a == 0:
+    if b == 0:
+        print("Vô số nghiệm" if c == 0 else "Vô nghiệm")
+    else:
+        print("x =", -c/b)
+else:
+    d = b*b - 4*a*c
+    if d < 0:
+        print("Vô nghiệm")
+    elif d == 0:
+        print("x =", -b/(2*a))
+    else:
+        print("x1 =", (-b+math.sqrt(d))/(2*a))
+        print("x2 =", (-b-math.sqrt(d))/(2*a))
