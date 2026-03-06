@@ -1,0 +1,23 @@
+def dien_tich(x1, y1, x2, y2, x3, y3):
+    return abs(x1*(y2 - y3) + x2*(y3 - y1) + x3*(y1 - y2)) / 2
+
+# Nhập tọa độ
+xA, yA = map(float, input("A(xA, yA): ").split())
+xB, yB = map(float, input("B(xB, yB): ").split())
+xC, yC = map(float, input("C(xC, yC): ").split())
+xM, yM = map(float, input("M(xM, yM): ").split())
+
+# Tính diện tích
+S_ABC = dien_tich(xA, yA, xB, yB, xC, yC)
+S_MAB = dien_tich(xM, yM, xA, yA, xB, yB)
+S_MBC = dien_tich(xM, yM, xB, yB, xC, yC)
+S_MCA = dien_tich(xM, yM, xC, yC, xA, yA)
+
+# So sánh
+if S_MAB + S_MBC + S_MCA == S_ABC:
+    if S_MAB == 0 or S_MBC == 0 or S_MCA == 0:
+        print("M nằm trên cạnh tam giác ABC")
+    else:
+        print("M nằm trong tam giác ABC")
+else:
+    print("M nằm ngoài tam giác ABC")
